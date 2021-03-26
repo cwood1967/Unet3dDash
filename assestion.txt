@@ -1,0 +1,8 @@
+assert len(image.shape)==len(tile_size), f'Image has dimension {len(image.shape)}, but tile_size has dimension {len(tile_size)}'
+
+assert len(image.shape)==len(overlap_fraction), f'Image has dimension {len(image.shape)}, but overlap_fraction has dimension {len(overlap_fraction)}'
+
+assert min(overlap_fraction)>=0 and max(overlap_fraction)<1, f'overlap_fraction must be between 0 and 1'
+
+for i, t in zip(image.shape, tile_size):
+    assert i>=t, f'Image shape ({i}) must be greater than or equal to tile size ({t})' 
